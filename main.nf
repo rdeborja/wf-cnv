@@ -45,7 +45,7 @@ process alignment {
     tuple val(sample_id), val(type), path("${sample_id}.bam"), path("${sample_id}.bam.bai")
 
   """
-  minimap2 -ax map-ont ${reference} ${fastq} | samtools sort -o ${sample_id}.bam
+  minimap2 -ax map-ont ${reference} ${fastq} | samtools sort -o ${sample_id}.bam -
   samtools index ${sample_id}.bam
   """
 }
